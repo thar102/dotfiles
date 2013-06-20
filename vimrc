@@ -10,6 +10,7 @@
 "   03. Theme/Colors ............ Colors, fonts, etc.                        "
 "   04. Vim UI .................. User interface behavior                    "
 "   05. Text Formatting/Layout .. Text, tab, indentation related             "
+"   06. Plug-in's................ Plug-in related behaviour                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,4 +64,10 @@ set shiftwidth=4          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set smarttab              " use tabs at the start of a line, spaces elsewhere
-set nowrap                " don't wrap text
+set nowrap                " don't wrap text, it's very confusing in a terminal
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 06. Plug-in's
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+execute pathogen#infect() 
+" use pathogen for easy plug-in installs
