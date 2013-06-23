@@ -116,4 +116,4 @@ fi
 # todo.txt
 PATH=$PATH:"~/Dropbox/.config/todo"
 export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo.sh -t -d ~/Dropbox/.config/todo/todo.cfg'
+alias t='todo.sh -t -n -d ~/Dropbox/.config/todo/todo.cfg'
