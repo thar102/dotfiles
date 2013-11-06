@@ -29,6 +29,12 @@ autocmd FileType make setlocal noexpandtab
 " Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
 set ofu=syntaxcomplete#Complete
 
+" Get rid of all trailing whitespace.
+autocmd FileType c,cpp,java,php,python autocmd BufWritePre * :%s/\s\+$//e
+
+" Convert all tabs to spaces in python
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,8 +44,8 @@ colorscheme desert        " set colorscheme
 
 
 " Highlight characters that go over 80 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+autocmd FileType  c,cpp,java,php,python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+autocmd FileType  c,cpp,java,php,python match OverLength /\%81v.\+/
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
@@ -64,7 +70,7 @@ set shiftwidth=4          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set expandtab             " use spaces instead of tabs
 set smarttab              " use tabs at the start of a line, spaces elsewhere
-set nowrap                " don't wrap text, it's very confusing in a terminal
+" set nowrap                " don't wrap text, it's very confusing in a terminal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 06. Plug-in's
